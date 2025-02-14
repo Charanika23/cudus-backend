@@ -19,7 +19,7 @@ app.use(bodyParser.json());
 // API route to send notification
 app.post("/send-notification", (req, res) => {
     const { sender, receiver, message } = req.body;
-    const recipientNumber = receiver === "charanika@gmail.com" ? process.env.ASHISH_PHONE : process.env.CHARANIKA_PHONE ;
+    const recipientNumber = sender === "charanika@gmail.com" ? process.env.ASHISH_PHONE : process.env.CHARANIKA_PHONE;
     console.log(recipientNumber)
     client.messages
         .create({
